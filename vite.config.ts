@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/app-drink_order/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
