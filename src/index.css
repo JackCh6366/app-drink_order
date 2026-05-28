@@ -1,1 +1,63 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+  
+  --color-brand-50: #FDFBE7;
+  --color-brand-100: #FBF6C4;
+  --color-brand-200: #F7ED90;
+  --color-brand-300: #F1DC54;
+  --color-brand-400: #EAC826;
+  --color-brand-500: #D9AD16;
+  --color-brand-600: #B68B10;
+  --color-brand-700: #916B0E;
+  --color-brand-800: #735210;
+  --color-brand-900: #5F4312;
+  --color-brand-tea: #FAF6ED;
+  --color-brand-brown: #4A3728;
+
+  --animate-bounce-slow: bounce 2s infinite;
+  --animate-wiggle: wiggle 0.5s ease-in-out infinite;
+  --animate-fade-in: fadeIn 0.4s ease-out forwards;
+  --animate-slide-up: slideUp 0.4s ease-out forwards;
+  --animate-pulse-soft: pulseSoft 2s infinite;
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+  }
+}
+
+/* 修飾捲軸，呈現時尚科技手感 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.4);
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}

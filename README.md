@@ -1,20 +1,45 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🥤 辦公室飲料訂購系統 (Office Drink Ordering System)
 
-# Run and deploy your AI Studio app
+一個基於 Vite + React + TypeScript + Tailwind CSS 打造的精美辦公室飲料訂購與統計系統。本專案支援與 Google 試算表 (Google Apps Script) 同步，自動存取訂單，並提供離線模擬模式（當無設定 API 或 API 無法使用時，自動切換至本機 `localStorage` 儲存）。
 
-This contains everything you need to run your app locally.
+## ✨ 核心特色
 
-View your app in AI Studio: https://ai.studio/apps/77b481fc-7798-4d59-8a25-6d01b9ca32d6
+1. **精美視覺設計**：暖色系品牌茶香主色調，流暢微動畫，支援模糊發光背景與響應式佈局。
+2. **直覺化點單流程**：支援品項搜尋、品類過濾，快速調整糖度、冰度與杯數，即時試算總價。
+3. **今日訂單統計**：即時顯示目前已點清單、加總杯數、總金額、各品項/甜度/冰度詳細統計折疊面板，便於點單人向店家叫貨。
+4. **GAS 後端同步**：透過簡單的 Google Apps Script 設定即可將訂單即時匯入 Google 試算表，實現無伺服器 (Serverless) 資料庫。
+5. **單機模擬模式**：當無網路連線或未配置 GAS API 時，系統自動降級為本機模擬模式，資料完全保存在瀏覽器 `localStorage` 中。
+6. **灑花慶祝特效**：送出訂單或更新訂單時觸發絢麗的 Confetti 灑花效果。
 
-## Run Locally
+## 🚀 本地開發與啟動
 
-**Prerequisites:**  Node.js
+**環境需求**：Node.js (建議 v18+)
 
+1. **安裝依賴套件**：
+   ```bash
+   npm install
+   ```
+2. **啟動開發伺服器**：
+   ```bash
+   npm run dev
+   ```
+   瀏覽器開啟 `http://localhost:3000` 即可訪問。
+3. **打包生產版本**：
+   ```bash
+   npm run build
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## ⚙️ Google Apps Script (GAS) 雲端資料庫架設步驟
+
+若您希望全公司可以共同編輯與統計訂單，請依循以下步驟部署後端：
+
+1. **建立 Google 試算表**：新建一個空白 Google 試算表。
+2. **開啟 Apps Script**：點擊選單列的 **「擴充功能」 -> 「Apps Script」**。
+3. **貼上原始碼**：將編輯器中的預設程式碼全部清除。在網頁右上方點擊 **「⚙️ 系統設定」** -> 按下 **「複製 Apps Script 原始碼」** 並貼上到 Apps Script 中。
+4. **部署為網路應用程式**：
+   - 點擊右上角藍色的 **「部署」 -> 「新部署」**。
+   - 點擊齒輪圖示，選取部署類型為 **「網路應用程式」**。
+   - **專案負責人**：選擇您的 Google 帳號。
+   - **誰有存取權**：務必選取 **「任何人 (Anyone)」**。
+5. **複製 API URL**：部署成功後，複製畫面上顯示的 **「網路應用程式 URL」**。
+6. **填回系統**：回到飲料訂購網頁，點擊右上角 **「⚙️ 系統設定」**，將 URL 填入輸入框並保存即可！下次開啟系統將自動同步您的 Google 試算表訂單。

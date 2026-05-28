@@ -1,6 +1,0 @@
-{
-  "name": "辦公室飲料訂購系統",
-  "description": "一鍵快速統計、精美點單與 GAS 後端串接的辦公室飲料訂購系統，一鍵下載、雙擊即開。",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
