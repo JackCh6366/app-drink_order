@@ -674,7 +674,7 @@ function doPost(e) {
 }
 
 function getTodaySheet() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.openById("1PelawpFCHkXDjnRFzWbBylWD5e5-8Szz9qOR8dVZTXs");
   var today = new Date();
   var sheetName = Utilities.formatDate(today, "GMT+8", "yyyy-MM-dd");
   var sheet = ss.getSheetByName(sheetName);
